@@ -1,0 +1,15 @@
+<launch>
+
+  <node name="sensor_arduino" pkg="rosserial_python" type="serial_node.py" output="screen">
+    <param name="port" value="/dev/ttyUSB0"/>  
+    <param name="baud" value="57600"/>
+  </node>
+
+  <node name="motor_arduino" pkg="rosserial_python" type="serial_node.py" output="screen">
+    <param name="port" value="/dev/ttyUSB1"/>  
+    <param name="baud" value="57600"/>
+  </node>
+
+  <node name="sensor_driver_node" pkg="rosserial_2310174" type="python_node.py" output="screen"/>
+  
+</launch>
